@@ -10,7 +10,8 @@ RUN R -e "install.packages('remotes')"
 RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
 COPY plumbpkg /tmp/plumbpkg
-RUN R -e "renv::install('/tmp/plumbpkg')"
+RUN R -e "options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/__linux__/bionic/latest')) \
+	renv::install('/tmp/plumbpkg')"
 
 COPY start_api.R /start_api.R
 
