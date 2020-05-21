@@ -1,0 +1,3 @@
+[submodule "plumbpkg"]
+	path = plumbpkg
+	url = git@github.com:actuarialvoodoo/plumbpkg.git
